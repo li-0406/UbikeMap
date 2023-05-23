@@ -1,13 +1,10 @@
 import L, { LatLngExpression } from "leaflet";
+import mapConfig from "./map.config";
 
-//台北市座標
-const taipei: LatLngExpression = [25.033, 121.5654];
+const { coordinate, zoomLevel, titleLayerURL, containerID } = mapConfig;
 
-//預設縮放等級
-const zoom = 13;
+const map = L.map(containerID);
 
-const map = L.map("map");
+map.setView(coordinate, zoomLevel);
 
-map.setView(taipei, zoom);
-
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+L.tileLayer(titleLayerURL).addTo(map);
