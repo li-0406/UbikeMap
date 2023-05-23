@@ -1,5 +1,8 @@
 import L, { LatLngExpression } from "leaflet";
 import mapConfig from "./map.config";
+import fetchUBikeData from "./fetchData";
+
+fetchUBikeData();
 
 const { coordinate, zoomLevel, titleLayerURL, containerID } = mapConfig;
 
